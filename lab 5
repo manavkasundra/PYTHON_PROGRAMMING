@@ -1,23 +1,45 @@
-post lab 1 question 
-t = (1, 2, 3, 2, 4, 2)
-print(t.count(2))
-post lab 2 question
-t = (10, 20, 30, 40)
-print(20 in t)
-post lab 3 quesrtion 
-t = ('H', 'e', 'l', 'l', 'o')
-s = ''.join(t)
-print(s)
-post lab 4 question 
-t = (5, 2, 9, 1, 7)
-print(max(t), min(t))
-post laB 5 question
-t = ('Python', 'is', 'fun')
-s = ' '.join(t)
-print(s)
-post lab 6 question
-t = (4, 1, 3, 2)
-print(tuple(sorted(t)))
-post lab 7 question 
-t = (10, 20, 30, 40, 50)
-print(t[0], t[-1])
+# a
+tuple = (1,2,3,3,4,5,6,7,3,3,8,3)
+print("The number of element in a tuple is:",tuple.count(3))
+
+# b
+tuple = (1,2,3,3,4,5,6,7,3,3,8,3)
+print(tuple.__contains__(7))
+
+# c
+my_tuple = ('P', 'y', 't', 'h', 'o', 'n')
+# Convert tuple to string
+result = ''.join(my_tuple)
+# Print the result
+print("Tuple:", my_tuple)
+print("String:", result)
+
+# d
+tuple = (1,2,3,4,5,6,7)
+print("Tuple:",tuple)
+print("The maximum element is:",max(tuple))
+print("The minimum element is:",min(tuple))
+
+# e
+my_tuple = ('Hello', 'World')
+# Convert tuple to a single string (joined with space)
+single_string = ' '.join(my_tuple)
+print("Tuple:", my_tuple)
+print("Single String:", single_string)
+
+# f
+tuple = (5,2,3,4,1)
+print("Before the sorted",tuple)
+print("After the sorted",sorted(tuple)) 
+
+# g
+tuple = (1,2,3,4,5,6,7)
+
+print("Tuple:",tuple)
+
+first = tuple[0]
+last = tuple[-1]
+
+print("The first element is:",first)
+print("The last element is:",last)
+
