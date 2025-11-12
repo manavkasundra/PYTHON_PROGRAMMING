@@ -1,44 +1,41 @@
+# a
 import pandas as pd
-
 s1 = pd.Series([10, 20, 30, 40, 50])
-s2 = pd.Series([2, 4, 6, 8, 10])
+s2 = pd.Series([1, 2, 4, 5, 6])
+print("Series 1:")
+print(s1)
+print("\nSeries 2:")
+print(s2)
+print("\nAddition of Series:")
+print(s1 + s2)
+print("\nSubtraction of Series:")
+print(s1 - s2)
+print("\nMultiplication of Series:")
+print(s1 * s2)
+print("\nDivision of Series:")
+print(s1 / s2)
 
-add = s1 + s2
-sub = s1 - s2
-mul = s1 * s2
-div = s1 / s2
-
-print("Addition:\n", add)
-print("Subtraction:\n", sub)
-print("Multiplication:\n", mul)
-print("Division:\n", div)
+# b
 import pandas as pd
+data = {'a': 100, 'b': 200, 'c': 300, 'd': 400}
+s = pd.Series(data)
+print(s)
 
-data = {'a': 100, 'b': 200, 'c': 300}
-series = pd.Series(data)
-
-print(series)
+# c
 import pandas as pd
 import numpy as np
+print("Series from List:")
+print(pd.Series([10, 20, 30, 40, 50]))
+print("\nSeries from NumPy Array:")
+print(pd.Series(np.array([100, 200, 300, 400, 500])))
+print("\nSeries from Dictionary:")
+print(pd.Series({'a': 1, 'b': 2, 'c': 3, 'd': 4}))
 
-lst = [5, 10, 15, 20]
-arr = np.array([25, 30, 35, 40])
-dct = {'x': 45, 'y': 50, 'z': 55}
-
-s_list = pd.Series(lst)
-s_array = pd.Series(arr)
-s_dict = pd.Series(dct)
-
-print("Series from list:\n", s_list)
-print("Series from NumPy array:\n", s_array)
-print("Series from dictionary:\n", s_dict)
+# d
 import pandas as pd
-
-s1 = pd.Series([1, 2, 3])
-s2 = pd.Series([4, 5, 6])
-
-vertical = pd.concat([s1, s2], ignore_index=True)
-horizontal = pd.concat([s1, s2], axis=1)
-
-print("Vertical Stack:\n", vertical)
-print("Horizontal Stack:\n", horizontal)
+s1 = pd.Series([1, 2, 3, 4])
+s2 = pd.Series([5, 6, 7, 8])
+print("Stacked Vertically:")
+print(pd.concat([s1, s2]))
+print("\nStacked Horizontally:")
+print(pd.concat([s1, s2], axis=1))
