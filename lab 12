@@ -1,30 +1,101 @@
-post lab  question 1
-fs = 1000 t = np.linspace(0, 1, fs, endpoint=False)
-f1 = 5 f2 = 10
-sine1 = np.sin(2 * np.pi * f1 * t) 
-sine2 = np.sin(2 * np.pi * f2 * t) 
-combined = sine1 + sine2
-plt.plot(t, combined) plt.title("Combined Sine
-Wave (5 Hz + 10 Hz)") plt.xlabel("Time (s)") 
-plt.ylabel("Amplitude") plt.grid(True) 
+# a
+import numpy as np
+import matplotlib.pyplot as plt
+# Parameters
+fs = 1000
+t = np.linspace(0, 1, fs, endpoint=False)
+f1 = 5
+f2 = 10
+sine1 = np.sin(2 * np.pi * f1 * t)
+sine2 = np.sin(2 * np.pi * f2 * t)
+# Add the two signals
+combined_signal = sine1 + sine2
+# result
+plt.figure(figsize=(10, 4))
+plt.plot(t, combined_signal)
+plt.title('Sum of 5 Hz and 10 Hz Sine Waves')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
 plt.show()
-POST lab 2 question 
-t = np.linspace(0, 2, 2 * fs, endpoint=False)
-sine_wave = np.sin(2 * np.pi * 5 * t) cosine_wave = np.cos(2 * np.pi * 10 * t) product = sine_wave * cosine_wave
-plt.plot(t, product) plt.title("Element-wise Product of 5 Hz Sine and 10 Hz Cosine") plt.xlabel("Time (s)") plt.ylabel("Amplitude") plt.grid(True) 
+
+# b
+import numpy as np
+import matplotlib.pyplot as plt
+fs = 500
+duration = 2
+t = np.linspace(0, duration, int(fs * duration), endpoint=False)
+# 5 Hz sine wave
+sine_wave = np.sin(2 * np.pi * 5 * t)
+# 10 Hz cosine wave
+cosine_wave = np.cos(2 * np.pi * 10 * t)
+# Element-wise multiplication
+product_signal = sine_wave * cosine_wave
+# result
+plt.figure(figsize=(10, 4))
+plt.plot(t, product_signal)
+plt.title('Product of 5 Hz Sine and 10 Hz Cosine Waves')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.grid(True)
+
+# c
+import numpy as np
+import matplotlib.pyplot as plt
+fs = 1000
+duration = 1
+t = np.linspace(0, duration, int(fs * duration), endpoint=False)
+freq = 5
+original = np.sin(2 * np.pi * freq * t)
+shift = 0.1
+shifted = np.sin(2 * np.pi * freq * (t - shift))
+# result
+plt.figure(figsize=(10, 4))
+plt.plot(t, original, label="Original 5 Hz Sine")
+plt.plot(t, shifted, label="Shifted by 0.1s", linestyle='--')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.title('Original and Shifted 5 Hz Sine Wave')
+plt.legend()
+plt.grid(True)
 plt.show()
-post leb 3 question
-import numpy as np import matplotlib.pyplot as plt
-fs = 1000 t = np.linspace(0, 1, fs, endpoint=False)
-original = np.sin(2 * np.pi * 5 * t) shifted = np.sin(2 * np.pi * 5 * (t - 0.1))
-plt.plot(t, original, label="Original") plt.plot(t, shifted, label="Shifted by 0.1s", linestyle='--') plt.title("Original vs Time-Shifted 5 Hz Sine Wave") plt.xlabel("Time (s)") plt.ylabel("Amplitude") plt.legend() plt.grid(True) plt.show()
-POST LAB 4  QUESTION 
-import numpy as np import matplotlib.pyplot as plt
-fs = 1000 t = np.linspace(0, 1, fs, endpoint=False)
-original = np.sin(2 * np.pi * 10 * t) scaled = 3 * original
-plt.plot(t, original, label="Original 10 Hz Sine") plt.plot(t, scaled, label="Scaled (×3)", linestyle='--') plt.title("Original vs Scaled 10 Hz Sine Wave")
-plt.xlabel("Time (s)") plt.ylabel("Amplitude") plt.legend() plt.grid(True) plt.show()
-POST LAB 5 QUESTION
-import numpy as np import matplotlib.pyplot as plt
-fs = 1000 t = np.linspace(0, 1, fs, endpoint=False) original = np.sin(2 * np.pi * 5 * t) versed_signal = original[::-1]
-plt.plot(t, original, label="Original") plt.plot(t, reversed_signal, label="Reversed", linestyle='--') plt.title("Original vs Time-Reversed 5 Hz Sine Wave") plt.xlabel("Time (s)") plt.ylabel("Amplitude") plt.legend() plt.grid(True) plt.show() 
+
+# d
+import numpy as np
+import matplotlib.pyplot as plt
+fs = 1000
+duration = 1
+t = np.linspace(0, duration, int(fs * duration), endpoint=False)
+freq = 10
+original = np.sin(2 * np.pi * freq * t)
+scaled = 3 * original
+#result
+plt.figure(figsize=(10, 4))
+plt.plot(t, original, label='Original 10 Hz Sine')
+plt.plot(t, scaled, label='Scaled (x3)', linestyle='--')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.title('10 Hz Sine Wave: Original and Scaled')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+# e
+import numpy as np
+import matplotlib.pyplot as plt
+fs = 1000
+duration = 1
+t = np.linspace(0, duration, int(fs * duration), endpoint=False)
+freq = 5
+original = np.sin(2 * np.pi * freq * t)
+reversed_signal = original[::-1]
+#result
+plt.figure(figsize=(10, 4))
+plt.plot(t, original, label='Original 5 Hz Sine')
+plt.plot(t, reversed_signal, label='Time-reversed', linestyle='--')
+plt.xlabel('Time (s)')
+plt.ylabel('Amplitude')
+plt.title('Original and Time-Reversed 5 Hz Sine Wave')
+plt.legend()
+plt.grid(True)
+plt.show()
+plt.show())
