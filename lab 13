@@ -1,0 +1,30 @@
+1.
+with open(r"C:\Users\Meet\OneDrive\Desktop\file1.txt","r") as file:
+    text = file.read()
+lines = text.splitlines()
+words = text.split()
+characters = list(text)
+print("Lines:", len(lines))
+print("Words:", len(words))
+print("Characters:", len(characters))
+
+2.
+with open(r"C:\Users\Meet\OneDrive\Desktop\file1.txt", "r") as file:
+    lines = file.readlines()
+print(lines)
+
+3.
+import csv
+with open(r'C:\Users\Meet\Downloads\data-1.csv', mode='r', newline='') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+4.
+with open(r"C:\Users\Meet\OneDrive\Desktop\file1.txt","r") as file1:
+    data1 = file1.read()
+with open(r"C:\Users\Meet\OneDrive\Desktop\file2.txt","r") as file2:
+    data2 = file2.read()
+with open("merged.txt", "w") as merged:
+    merged.write(data1)
+    merged.write(data2)
