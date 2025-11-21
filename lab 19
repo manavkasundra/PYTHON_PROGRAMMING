@@ -1,0 +1,67 @@
+1.
+import numpy as np
+
+def analyze_unit_step_z_transform():
+    """
+    Computes the Z-transform of the unit step function u[n] and verifies 
+    its stability based on the pole location.
+    
+    The analytical Z-transform of the unit step is H(z) = z / (z - 1).
+    """
+    pole = 1.0
+    
+    print("--- Z-Transform Analysis of Unit Step Function u[n] ---")
+    print(f"Analytical Z-Transform H(z) = z / (z - 1)")
+    print(f"The single pole of the system is located at z = {pole}")
+    magnitude = np.abs(pole)
+    
+    print(f"Pole Magnitude: |z| = {magnitude}")
+    
+    if magnitude < 1:
+        stability_result = "Stable"
+    else:
+        stability_result = "Unstable (Pole is on the unit circle at z=1)"
+
+    print(f"\nConclusion: The system is **{stability_result}**.")
+    
+# Run the analysis
+analyze_unit_step_z_transform()
+
+2.
+import numpy as np
+
+def analyze_z_system_stability(num_coeffs, den_coeffs):
+    """
+    Analyzes the stability of a discrete-time system defined by its 
+    Z-transfer function H(z) = N(z) / D(z).
+
+    Args:
+        num_coeffs (list): Coefficients of the numerator N(z).
+        den_coeffs (list): Coefficients of the denominator D(z). 
+                           These should be in descending powers of z, 
+                           after clearing all negative powers of z.
+                           
+                           Example: For H(z) = 1 / (1 - 0.5z^-1), 
+                           the characteristic equation is z - 0.5 = 0.
+                           Use den_coeffs = [1, -0.5].
+    """
+    print("\n--- Z-System Stability Analysis ---")
+    
+    poles = np.roots(den_coeffs)
+    
+    print(f"Denominator Coefficients D(z): {den_coeffs}")
+    print(f"System Poles (roots of D(z)=0): {poles}")    
+    pole_magnitudes = np.abs(poles)
+    print(f"Pole Magnitudes: {pole_magnitudes}")
+    is_unstable = np.any(pole_magnitudes >= 1)
+    if is_unstable:
+        stability_result = "Unstable (At least one pole is outside or on the unit circle, |z| >= 1)."
+    else:
+        stability_result = "Stable (All poles are strictly inside the unit circle, |z| < 1)."
+
+    print(f"\nConclusion: The system is **{stability_result}**.")
+num = [1]         # Numerator
+den = [1, -0.5]   # Denominator D(z)
+
+print("Analyzing Example System: H(z) = 1 / (1 - 0.5z^-1)")
+analyze_z_system_stability(num, den)
